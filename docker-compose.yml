@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+    container_name: mamaopeai_rag_api
+    ports:
+      - "8091:8091"
+    env_file:
+      - .env  
+    environment:
+      - ENV=production
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    
